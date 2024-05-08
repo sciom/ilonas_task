@@ -1,8 +1,9 @@
 {
 "type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "label": "tree", "designation": 1, "row": 3, "sound_dB": 39.3, "longitude": 165.82783, "latitude": -21.72136 }, "geometry": { "type": "Point", "coordinates": [ 165.82783, -21.72136 ] } },
-{ "type": "Feature", "properties": { "label": "tree", "designation": 2, "row": 3, "sound_dB": 43.8, "longitude": 165.8211, "latitude": -21.7214 }, "geometry": { "type": "Point", "coordinates": [ 165.8211, -21.7214 ] } },
+{ "type": "Feature", "properties": { "label": "tree", "designation": 2, "row": 3, "sound_dB": 43.8, "longitude": 165.82811, "latitude": -21.7214 }, "geometry": { "type": "Point", "coordinates": [ 165.82811, -21.7214 ] } },
 { "type": "Feature", "properties": { "label": "tree", "designation": 3, "row": 3, "sound_dB": 63.8, "longitude": 165.82821, "latitude": -21.72141 }, "geometry": { "type": "Point", "coordinates": [ 165.82821, -21.72141 ] } },
 { "type": "Feature", "properties": { "label": "speaker", "designation": 1, "row": 3, "sound_dB": null, "longitude": 165.82837, "latitude": -21.72143 }, "geometry": { "type": "Point", "coordinates": [ 165.82837, -21.72143 ] } },
 { "type": "Feature", "properties": { "label": "tree", "designation": 4, "row": 3, "sound_dB": 66.7, "longitude": 165.82848, "latitude": -21.72145 }, "geometry": { "type": "Point", "coordinates": [ 165.82848, -21.72145 ] } },
@@ -16,7 +17,7 @@
 { "type": "Feature", "properties": { "label": "tree", "designation": 4, "row": 8, "sound_dB": 52.0, "longitude": 165.82848, "latitude": -21.72178 }, "geometry": { "type": "Point", "coordinates": [ 165.82848, -21.72178 ] } },
 { "type": "Feature", "properties": { "label": "tree", "designation": 5, "row": 8, "sound_dB": 54.5, "longitude": 165.82856, "latitude": -21.72178 }, "geometry": { "type": "Point", "coordinates": [ 165.82856, -21.72178 ] } },
 { "type": "Feature", "properties": { "label": "speaker", "designation": 3, "row": 8, "sound_dB": null, "longitude": 165.82867, "latitude": -21.72179 }, "geometry": { "type": "Point", "coordinates": [ 165.82867, -21.72179 ] } },
-{ "type": "Feature", "properties": { "label": "tree", "designation": 6, "row": 8, "sound_dB": 65.1, "longitude": 165.82883, "latitude": -21.72812 }, "geometry": { "type": "Point", "coordinates": [ 165.82883, -21.72812 ] } },
+{ "type": "Feature", "properties": { "label": "tree", "designation": 6, "row": 8, "sound_dB": 65.1, "longitude": 165.82883, "latitude": -21.72182 }, "geometry": { "type": "Point", "coordinates": [ 165.82883, -21.72182 ] } },
 { "type": "Feature", "properties": { "label": "tree", "designation": 1, "row": 13, "sound_dB": 57.2, "longitude": 165.82779, "latitude": -21.72201 }, "geometry": { "type": "Point", "coordinates": [ 165.82779, -21.72201 ] } },
 { "type": "Feature", "properties": { "label": "tree", "designation": 2, "row": 13, "sound_dB": 58.0, "longitude": 165.82807, "latitude": -21.72204 }, "geometry": { "type": "Point", "coordinates": [ 165.82807, -21.72204 ] } },
 { "type": "Feature", "properties": { "label": "tree", "designation": 3, "row": 13, "sound_dB": 66.4, "longitude": 165.82817, "latitude": -21.72205 }, "geometry": { "type": "Point", "coordinates": [ 165.82817, -21.72205 ] } },
