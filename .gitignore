@@ -2,3 +2,4 @@ assets/siteA_orthomosaic.tif
 
 *.tif.aux.xml
 .Rproj.user
+.Rhistory
