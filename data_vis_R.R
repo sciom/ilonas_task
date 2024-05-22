@@ -1,6 +1,12 @@
 rm(list=ls())
 
 # Load necessary libraries
+# If you don't have these libraries installed, uncomment the following lines to install them
+# install.packages("sf")
+install.packages("ggplot2")
+install.packages("raster")
+install.packages("dplyr")
+
 library(sf)
 library(ggplot2)
 library(raster)
