@@ -9,6 +9,12 @@ data = pd.read_csv("sound_and_tree_data.csv", delimiter=";")
 
 bats_data = pd.read_csv("bats_t1.csv", delimiter=",")
 
+bats_data["longitude"] = bats_data["LATITUDE"].apply(lambda x: float(x.replace(",", ".").replace("°E", "")))
+bats_data["latitude"] = bats_data["LONGITUDE"].apply(lambda x: float(x.replace(",", ".").replace("°S", ""))*-1)
+bats_data
+bats = gpd.GeoDataFrame(bats_data, geometry=gpd.points_from_xy(bats_data["longitude"], bats_data["latitude"]), crs="EPSG:4326")
+
+
 # Separating longitude and lattitude from the location column
 longitudes = []
 latitudes = []
@@ -197,21 +203,17 @@ for i in range(len(trees)):
 
 # add labels to the trees
 
-for i in range(len(trees)):
-    t = plt.text(
-        trees_wgs84.iloc[i].geometry.x,
-        trees_wgs84.iloc[i].geometry.y,
-        f"{trees.iloc[i].row}-{trees.iloc[i].designation} | {trees.iloc[i].sound_dB}dB",
-        fontsize=10,
-        color="white",rotation=45)
-    t.set_bbox(dict(facecolor="black", alpha=0.3, edgecolor="black"))
+# for i in range(len(trees)):
+#     t = plt.text(
+#         trees_wgs84.iloc[i].geometry.x,
+#         trees_wgs84.iloc[i].geometry.y,
+#         f"{trees.iloc[i].row}-{trees.iloc[i].designation} | {trees.iloc[i].sound_dB}dB",
+#         fontsize=10,
+#         color="white",rotation=45)
+#     t.set_bbox(dict(facecolor="black", alpha=0.3, edgecolor="black"))
 legend = ax.legend()
 legend.legendHandles[0]._sizes = [50]
 
-bats_data["longitude"] = bats_data["LATITUDE"].apply(lambda x: float(x.replace(",", ".").replace("°E", "")))
-bats_data["latitude"] = bats_data["LONGITUDE"].apply(lambda x: float(x.replace(",", ".").replace("°S", ""))*-1)
-bats_data
-bats = gpd.GeoDataFrame(bats_data, geometry=gpd.points_from_xy(bats_data["longitude"], bats_data["latitude"]), crs="EPSG:4326")
 
 # split by period
 bats_during = bats[bats["PERIOD"] == "during"]
@@ -230,8 +232,12 @@ for i in range(len(bats)):
             fontsize=10,
             color="white",rotation=0)
         if bats.iloc[i]["PERIOD"] == "during":
-            t.set_bbox(dict(facecolor="red", alpha=0.3, edgecolor="black"))
-        t.set_bbox(dict(facecolor="black", alpha=0.3, edgecolor="black"))
+            t.set_bbox(dict(facecolor="red", alpha=0.4, edgecolor="black"))
+        if bats.iloc[i]["MANUAL_ID"] == "CHALINO":
+            t.set_bbox(dict(facecolor="blue", alpha=0.4, edgecolor="black"))
+        else:
+            t.set_bbox(dict(facecolor="green", alpha=0.4, edgecolor="black"))
+        # t.set_bbox(dict(facecolor="black", alpha=0.3, edgecolor="black"))
     else:
         
         t = plt.text(
@@ -241,7 +247,10 @@ for i in range(len(bats)):
             fontsize=10,
             color="white",rotation=0)
         recordedpoints.append([bats.iloc[i].geometry.x, bats.iloc[i].geometry.y])  
-        t.set_bbox(dict(facecolor="black", alpha=0.3, edgecolor="black"))
+        if bats.iloc[i]["MANUAL_ID"] == "CHALINO":
+            t.set_bbox(dict(facecolor="blue", alpha=0.4, edgecolor="black"))
+        else:
+            t.set_bbox(dict(facecolor="green", alpha=0.4, edgecolor="black"))
     
 
 
